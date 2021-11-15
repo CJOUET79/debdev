@@ -1,0 +1,116 @@
+/* Layout */
+html {
+    display: flex; flex-direction: column;
+    color: navy;
+} /* IE fix */
+body {
+  display: flex; /* crée un contexte flex pour ses enfants */
+  flex-direction: column; /* affichage vertical */
+  min-height: 100vh; /* toute la hauteur du viewport (compatible IE9+) */
+}
+.wrapper {
+  display: block; /* IE fix */
+  flex: 1 1 auto; /* occupe la hauteur restante */
+  display: flex; /* crée un contexte flex pour ses enfants */
+  flex-direction: row; /* affichage horizontal */
+}
+nav {
+  width: 15em;
+}
+.content {
+  display: block; /* IE fix */
+  flex: 1; /* occupe la largeur restante */
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+	body {
+  min-height: 0; 
+}
+	.wrapper {
+    flex-direction: column;
+  }
+	.content {
+	flex-basis: auto;
+	}
+  nav {
+    width: auto;
+    order: 1;
+  }
+}
+
+/* Decoration */
+body {
+	margin: 0;
+	font-family: "Century Gothic", helvetica, arial, sans-serif;
+	font-size: 1.1em;
+}
+header, nav, footer {
+	padding: 10px;
+	margin: 0;
+}
+header {
+    text-align: center;
+}
+h1, h2 {
+    display: inline-block;
+    padding: 20px;
+    box-shadow: 10px 5px 5px navy;
+}
+nav {
+    display: flex;
+    flex-direction: column; 
+}
+nav a {
+  display: block;
+  padding: .5em 1em;
+  text-decoration: none;
+  color: navy;
+}
+section {
+    margin-left: 50px;
+}
+footer {
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+}
+footer a{
+    text-decoration: none;
+    color: navy;
+}
+img{
+    width: 20px;
+    height: 20px;
+    padding-right: 5px;
+}
+.fb, .lk{
+    display: flex;
+}
+
+@media (max-width: 640px) {
+	body {
+  min-height: 0; 
+}
+	.wrapper {
+    flex-direction: column;
+  }
+	.content {
+		flex-basis: auto;
+        text-align: center;
+	}
+    section {
+        margin: auto;
+    }
+  nav {
+    width: auto;
+    order: 1;
+    margin: auto;
+  }
+  nav a {
+    border-bottom: solid 1px navy;
+  }
+  footer{
+    flex-direction: column;
+  }
+}
